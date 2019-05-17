@@ -63,9 +63,9 @@ jQuery(document).ready(function($){
 		OptionFormManager.init();
 	});
 	
-	// Highlighted only
-	$('#highlighted_tab_only').change(function(e){
-		localStorage["highlighted_tab_only"] = $(this).prop("checked");
+	// Unpinned only
+	$('#unpinned_tab_only').change(function (e) {
+		localStorage["unpinned_tab_only"] = $(this).prop("checked");
 		OptionFormManager.init();
 	});
 	
@@ -167,7 +167,7 @@ var OptionFormManager = {
 		var format_custom_advanced = localStorage['format_custom_advanced'] ? localStorage['format_custom_advanced'] : '';
 		var intelligent_paste = localStorage['intelligent_paste'] == "true" ? true : false;
 		var walk_all_windows = localStorage['walk_all_windows'] == "true" ? true : false;
-		var highlighted_tab_only = localStorage['highlighted_tab_only'] == "true" ? true : false;
+		var unpinned_tab_only = localStorage['unpinned_tab_only'] == "true" ? true : false;
 		var default_action = localStorage['default_action'] ? localStorage['default_action'] : "menu";
 		var mime = localStorage['mime'] ? localStorage['mime'] : 'plaintext';
 		
@@ -197,8 +197,8 @@ var OptionFormManager = {
 		// Coche Copy tabs from all windows
 		jQuery('#walk_all_windows').prop('checked', walk_all_windows);
 		
-		// Coche highlighted
-		jQuery('#highlighted_tab_only').prop('checked', highlighted_tab_only);
+		// Coche unpinned
+		jQuery('#unpinned_tab_only').prop('checked', unpinned_tab_only);
 		
 		// Default action
 		jQuery('#default_action').val(default_action);
@@ -224,7 +224,7 @@ var OptionFormManager = {
 		delete(localStorage["format_custom_advanced"]);
 		delete(localStorage["intelligent_paste"]);
 		delete(localStorage["walk_all_windows"]);
-		delete(localStorage["highlighted_tab_only"]);
+		delete (localStorage["unpinned_tab_only"]);
 		delete(localStorage["default_action"]);
 		delete(localStorage["mime"]);
 		this.init();

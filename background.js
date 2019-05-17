@@ -71,14 +71,14 @@ Action = {
 		chrome.tabs.query(tabQuery, function(tabs){
 			// Récupération configuration
 			var format = localStorage['format'] ? localStorage['format'] : 'text';
-			var highlighted_tab_only = localStorage['highlighted_tab_only'] == 'true' ? true : false;
+			var unpinned_tab_only = localStorage['unpinned_tab_only'] == 'true' ? true : false;
 			var extended_mime = typeof localStorage['mime'] != 'undefined' && localStorage['mime'] == 'html' ? true : false;
 			var outputText = '';
 			
 			// Filtrage des onglets
 			var tabs_filtered = [];
 			for (var i=0; i < tabs.length; i++) {
-				if( highlighted_tab_only && !tabs[i].highlighted ) continue;
+				if (unpinned_tab_only && !tabs[i].unpinned) continue;
 				tabs_filtered.push(tabs[i]);
 			}
 			tabs = tabs_filtered;
@@ -345,7 +345,7 @@ AnalyticsHelper = {
 			an: localStorage['anchor'] ? localStorage['anchor'] : 'url',
 			da: localStorage['default_action'] ? localStorage['default_action'] : "menu",
 			mm: localStorage['mime'] ? localStorage['mime'] : 'plaintext',
-			hl: localStorage['highlighted_tab_only'] == "true" ? 1 : 0,
+			hl: localStorage['unpinned_tab_only'] == "true" ? 1 : 0,
 			ip: localStorage['intelligent_paste'] == "true" ? 1 : 0,
 			ww: localStorage['walk_all_windows'] == "true" ? 1 : 0
 		};
@@ -361,7 +361,7 @@ AnalyticsHelper = {
 					fm: localStorage['format'] ? localStorage['format'] : 'text',
 					an: localStorage['anchor'] ? localStorage['anchor'] : 'url',
 					mm: localStorage['mime'] ? localStorage['mime'] : 'plaintext',
-					hl: localStorage['highlighted_tab_only'] == "true" ? 1 : 0,
+					hl: localStorage['unpinned_tab_only'] == "true" ? 1 : 0,
 					ww: localStorage['walk_all_windows'] == "true" ? 1 : 0
 				};
 				break;
