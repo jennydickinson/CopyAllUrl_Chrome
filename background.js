@@ -78,7 +78,7 @@ Action = {
 			// Filtrage des onglets
 			var tabs_filtered = [];
 			for (var i=0; i < tabs.length; i++) {
-				if (unpinned_tab_only && !tabs[i].unpinned) continue;
+				if (unpinned_tab_only && tabs[i].pinned) continue;
 				tabs_filtered.push(tabs[i]);
 			}
 			tabs = tabs_filtered;
