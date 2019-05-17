@@ -1,7 +1,7 @@
 {
 	"browser_action": {
 		"default_icon": "img/umbrella_19.png",
-		"default_title": "Copy URLs to clipboard",
+		"default_title": "Copy URLs to Bear",
 		"default_popup": "popup.html"
 	},
 	"description": "Copy tabs URL to clipboard (formats : text, HTML, JSON or custom). Paste to open multiple URL at one go.",
@@ -25,7 +25,7 @@
 			"description": "Paste"
 		}
 	},
-	"name": "Copy All Urls",
+	"name": "Copy All Urls to Bear",
 	"options_page": "options.html",
 	"permissions": ["tabs", "http://*/*", "https://*/*", "management", "clipboardRead", "clipboardWrite", "notifications"],
 	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
