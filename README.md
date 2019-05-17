@@ -1,6 +1,12 @@
-Copy All URL for Google Chrome
-==============================
+# Copy All URL for Google Chrome
 
-CopyAllURL is Google Chrome extension to copy all openned tabs URL to clipboard, and to open multiple URL in the clipboard (paste).
 
-You can install it with the Chrome Web Store : https://chrome.google.com/webstore/detail/copy-all-urls/djdmadneanknadilpjiknlnanaolmbfk
+## Changes in functionality
+
+Added the ability to skip pinned tabs (replacing original feature for only-highlighted tabs)
+
+
+## On the jenny/bear and jenny/en branches:
+
+* Blue umbrella icon for Bear, note on markdown syntax
+* Green umbrella icon for EN
